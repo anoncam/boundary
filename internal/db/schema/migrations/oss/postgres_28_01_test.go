@@ -158,13 +158,13 @@ func TestMigrations_Kms(t *testing.T) {
 	}
 }
 
-func testDeprecatedKms(t *testing.T, conn *db.DB, rootWrapper wrapping.Wrapper) *kms.Kms {
+func testDeprecatedKms(t *testing.T, conn *db.DB, rootWrapper wrapping.Wrapper) *kms.DeprecatedKms {
 	t.Helper()
 	require := require.New(t)
 	rw := db.New(conn)
 	kmsRepo, err := kms.NewRepository(rw, rw)
 	require.NoError(err)
-	k, err := kms.NewKms(kmsRepo)
+	k, err := kms.DeprecatedNew(kmsRepo)
 	require.NoError(err)
 	err = k.AddExternalWrappers(context.Background(), kms.WithRootWrapper(rootWrapper))
 	require.NoError(err)
