@@ -79,7 +79,7 @@ func TestMigrations_Kms(t *testing.T) {
 	// okay, now we can see the kms with a set of wrappers and then use those
 	// initial wrappers for crypto operations... which we should be able to
 	// repeat after we've migrated to the new kms tables.
-	kms.CreateKeysTx(ctx, rw, rw, rootWrapper, rand.Reader, "global")
+	kms.DeprecatedCreateKeysTx(ctx, rw, rw, rootWrapper, rand.Reader, "global")
 	iamRepo := iam.TestRepo(t, conn, rootWrapper)
 	org, prj := testDeprecatedScopes(t, iamRepo)
 	deprecatedKmsCache := testDeprecatedKms(t, conn, rootWrapper)
