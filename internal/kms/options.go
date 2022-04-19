@@ -92,7 +92,7 @@ func WithScopeIds(scopeId ...string) Option {
 	}
 }
 
-// WithRandomReadear(...) option allows an optional random reader to be
+// WithRandomReader(...) option allows an optional random reader to be
 // provided.  By default the reader from crypto/rand will be used.
 func WithRandomReader(randomReader io.Reader) Option {
 	return func(o *options) {
