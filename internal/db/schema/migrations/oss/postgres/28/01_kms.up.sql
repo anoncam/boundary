@@ -17,7 +17,7 @@ insert into kms_schema_version(version) values('v0.0.1');
 
 -- we can use our existing kms_root_key table.
 
--- we need to add an add additional constraint to the kms_roolt_key_version
+-- we need to add an add additional constraint to the kms_root_key_version
 -- table: 
 -- https://github.com/hashicorp/go-kms-wrapping/blob/c06f9db9380f2c26cad07cf51f7a324d25dd55ba/extras/kms/migrations/postgres/04_keys.up.sql#L29 
 alter table kms_root_key_version
