@@ -79,7 +79,7 @@ require (
 	google.golang.org/protobuf v1.27.1
 	gorm.io/driver/postgres v1.2.2
 	gorm.io/gorm v1.22.3
-	mvdan.cc/gofumpt v0.3.0
+	mvdan.cc/gofumpt v0.3.1
 	nhooyr.io/websocket v1.8.7
 )
 
